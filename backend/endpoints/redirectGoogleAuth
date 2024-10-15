@@ -1,0 +1,5 @@
+const redirectGoogleAuth = async (req, res) => {
+   console.log("redirecting...");
+   res.redirect("https://www.example.com");
+};
+module.exports = redirectGoogleAuth;
