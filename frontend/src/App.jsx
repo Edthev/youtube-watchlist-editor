@@ -27,7 +27,7 @@ function App() {
          ) : (
             <button onClick={handleLogin}>Login</button>
          )}
-         {isLoggedIn ? <IsLoggedInComponent /> : <p>"logged out"</p>}
+         {isLoggedIn ? <IsLoggedInComponent /> : <p>logged out</p>}
       </>
    );
 }
