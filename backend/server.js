@@ -2,7 +2,10 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 
-const authenticate = require("./components/authenticate");
+const redirectGoogleAuth = require("./endpoints/redirectGoogleAuth");
+const authenticated = require("./endpoints/authenticated");
+const playlist = require("./endpoints/getPlaylists");
+const makeRequests = require("./modules/makeRequests");
 
 const PORT = process.env.PORT;
 app.use(express.json());
@@ -15,6 +18,13 @@ app.get("/", (req, res) => {
    res.send({ Status: "Service Running" });
 });
 
-app.get("/authenticate", (req, res) => {
-   authenticate(req, res);
+app.get("/auth", (req, res) => {
+   redirectGoogleAuth(req, res);
+});
+
+app.get("/authenticated", (req, res) => {
+   authenticated(req, res);
+});
+app.get("/playlist", (req, res) => {
+   playlist(req, res);
 });
