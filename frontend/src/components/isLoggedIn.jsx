@@ -19,7 +19,7 @@ export default function isLoggedIn() {
                .get("https://youtube.googleapis.com/youtube/v3/playlists", {
                   params: {
                      part: "snippet,contentDetails",
-                     maxResults: 5,
+                     maxResults: 25,
                      mine: true,
                   },
                   headers: {
