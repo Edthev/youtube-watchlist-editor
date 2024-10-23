@@ -4,8 +4,6 @@ require("dotenv").config();
 
 const redirectGoogleAuth = require("./endpoints/redirectGoogleAuth");
 const authenticated = require("./endpoints/authenticated");
-const playlist = require("./endpoints/getPlaylists");
-const makeRequests = require("./modules/makeRequests");
 
 const PORT = process.env.PORT;
 app.use(express.json());
@@ -24,7 +22,4 @@ app.get("/auth", (req, res) => {
 
 app.get("/authenticated", (req, res) => {
    authenticated(req, res);
-});
-app.get("/playlist", (req, res) => {
-   playlist(req, res);
 });
